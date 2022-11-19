@@ -1,11 +1,36 @@
-import Post from "./Post"
+import Post from "./Post";
 
-export default function Posts(){
-    const dados = [{imagemPerfil:"assets/img/meowed.svg",nomePerfil:"meowed",imagemPost:"assets/img/gato-telefone.svg",perfilCurtiu:"respondeai",qtdCurtidas:0},
-    {imagemPerfil:"assets/img/barked.svg",nomePerfil:"barked",imagemPost:"assets/img/dog.svg",perfilCurtiu:"adorable_animals",qtdCurtidas:0}]
-    return(
-        <div class="posts">
-            {dados.map((p)=> <Post imagemPerfil={p.imagemPerfil} nomePerfil={p.nomePerfil} imagemPost={p.imagemPost} perfilCurtiu={p.perfilCurtiu} qtdCurtidas={p.qtdCurtidas} />)}
-      </div>
-    )
+export default function Posts() {
+  const dados = [
+    {
+      imagemPerfil: "assets/img/meowed.svg",
+      nomePerfil: "meowed",
+      imagemPost: "assets/img/gato-telefone.svg",
+      imagemPerfilCurtiu: "assets/img/respondeai.svg",
+      perfilCurtiu: "respondeai",
+      qtdCurtidas: 10,
+    },
+    {
+      imagemPerfil: "assets/img/barked.svg",
+      nomePerfil: "barked",
+      imagemPost: "assets/img/dog.svg",
+      imagemPerfilCurtiu: "assets/img/adorable_animals.svg",
+      perfilCurtiu: "adorable_animals",
+      qtdCurtidas: 123120,
+    },
+  ];
+  return (
+    <div class="posts">
+      {dados.map((p) => (
+        <Post
+          imagemPerfil={p.imagemPerfil}
+          nomePerfil={p.nomePerfil}
+          imagemPost={p.imagemPost}
+          imagemPerfilCurtiu={p.imagemPerfilCurtiu}
+          perfilCurtiu={p.perfilCurtiu}
+          qtdCurtidas={p.qtdCurtidas}
+        />
+      ))}
+    </div>
+  );
 }

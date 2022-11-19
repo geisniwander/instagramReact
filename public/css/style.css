@@ -400,3 +400,9 @@ ion-icon {
   margin-left: 5px;
 }
 
+.curtido{
+  color:red;
+}
+.naocurtido{
+  color:none;
+}
