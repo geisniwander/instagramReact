@@ -26,41 +26,52 @@ export default function Post(props) {
   }
 
   return (
-    <div class="post">
-      <div class="topo">
-        <div class="usuario">
+    <div className="post" data-test="post">
+      <div className="topo">
+        <div className="usuario">
           <img src={props.imagemPerfil} />
           {props.nomePerfil}
         </div>
-        <div class="acoes">
+        <div className="acoes">
           <ion-icon name="ellipsis-horizontal"></ion-icon>
         </div>
       </div>
 
-      <div class="conteudo">
-        <img src={props.imagemPost} onClick={() => curtirPost("img")} />
+      <div className="conteudo">
+        <img
+          src={props.imagemPost}
+          onClick={() => curtirPost("img")}
+          data-test="post-image"
+        />
       </div>
 
-      <div class="fundo">
-        <div class="acoes">
+      <div className="fundo">
+        <div className="acoes">
           <div>
             <ion-icon
               class={curtir}
               name={botaoCurtir}
               onClick={() => curtirPost("botao")}
+              data-test="like-post"
             ></ion-icon>
             <ion-icon name="chatbubble-outline"></ion-icon>
             <ion-icon name="paper-plane-outline"></ion-icon>
           </div>
           <div>
-            <ion-icon name={salvar} onClick={salvarPost}></ion-icon>
+            <ion-icon
+              name={salvar}
+              onClick={salvarPost}
+              data-test="save-post"
+            ></ion-icon>
           </div>
         </div>
-        <div class="curtidas">
+        <div className="curtidas">
           <img src={props.imagemPerfilCurtiu} />
-          <div class="texto">
+          <div className="texto">
             Curtido por <strong>{props.perfilCurtiu}</strong> e{" "}
-            <strong>outras {qtdCurtir} pessoas</strong>
+            <strong>
+              outras <span data-test="likes-number">{qtdCurtir}</span> pessoas
+            </strong>
           </div>
         </div>
       </div>

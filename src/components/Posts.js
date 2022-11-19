@@ -20,9 +20,10 @@ export default function Posts() {
     },
   ];
   return (
-    <div class="posts">
-      {dados.map((p) => (
+    <div className="posts">
+      {dados.map((p, index) => (
         <Post
+          key={index}
           imagemPerfil={p.imagemPerfil}
           nomePerfil={p.nomePerfil}
           imagemPost={p.imagemPost}
