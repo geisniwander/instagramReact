@@ -2,14 +2,14 @@ import { useState } from "react";
 
 export default function Post(props) {
   const bookmarkOutline = "bookmark-outline";
-  const [salvar, setSalvar] = useState({bookmarkOutline});
+  const [salvar, setSalvar] = useState(bookmarkOutline);
   const [curtir, setCurtir] = useState("naoCurtido");
   const [botaoCurtir, setBotaoCurtir] = useState("heart-outline");
   const [qtdCurtir, setQtdCurtir] = useState(props.qtdCurtidas);
 
   function salvarPost() {
-    if (salvar ==={bookmarkOutline}){setSalvar("bookmark");}
-    else{setSalvar({bookmarkOutline});}
+    if (salvar ===bookmarkOutline){setSalvar("bookmark");}
+    else{setSalvar(bookmarkOutline);}
   }
 
   function curtirPost(identificador) {
