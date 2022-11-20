@@ -1,14 +1,15 @@
 import { useState } from "react";
 
 export default function Post(props) {
-  const [salvar, setSalvar] = useState("bookmark-outline");
+  const bookmarkOutline = "bookmark-outline";
+  const [salvar, setSalvar] = useState({bookmarkOutline});
   const [curtir, setCurtir] = useState("naoCurtido");
   const [botaoCurtir, setBotaoCurtir] = useState("heart-outline");
   const [qtdCurtir, setQtdCurtir] = useState(props.qtdCurtidas);
 
   function salvarPost() {
-    if (salvar === "bookmark-outline") setSalvar("bookmark");
-    else setSalvar("bookmark-outline");
+    if (salvar ==={bookmarkOutline}){setSalvar("bookmark");}
+    else{setSalvar({bookmarkOutline});}
   }
 
   function curtirPost(identificador) {
@@ -21,7 +22,7 @@ export default function Post(props) {
         setCurtir("naoCurtido");
         setBotaoCurtir("heart-outline");
         setQtdCurtir(qtdCurtir - 1);
-      } else return;
+      } else{return;}
     }
   }
 
@@ -29,7 +30,7 @@ export default function Post(props) {
     <div className="post" data-test="post">
       <div className="topo">
         <div className="usuario">
-          <img src={props.imagemPerfil} />
+          <img alt="imagem-perfil" src={props.imagemPerfil} />
           {props.nomePerfil}
         </div>
         <div className="acoes">
@@ -38,7 +39,7 @@ export default function Post(props) {
       </div>
 
       <div className="conteudo">
-        <img
+        <img alt="imagem-post"
           src={props.imagemPost}
           onClick={() => curtirPost("img")}
           data-test="post-image"
@@ -66,7 +67,7 @@ export default function Post(props) {
           </div>
         </div>
         <div className="curtidas">
-          <img src={props.imagemPerfilCurtiu} />
+          <img alt={props.perfilCurtiu} src={props.imagemPerfilCurtiu} />
           <div className="texto">
             Curtido por <strong>{props.perfilCurtiu}</strong> e{" "}
             <strong>

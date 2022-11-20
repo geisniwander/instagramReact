@@ -9,7 +9,9 @@ export default function Usuario(props) {
     if (str === "") {
       alert("URL Vazia!");
       return;
-    } else if (!str) return;
+    } else if (!str) {
+      return;
+    }
 
     try {
       new URL(str);
@@ -27,13 +29,16 @@ export default function Usuario(props) {
     } else if (str[0] === " ") {
       alert("Nome Inválido!");
       return;
-    } else if (!str) return;
-    else setNome(str);
+    } else if (!str) {
+      return;
+    } else {
+      setNome(str);
+    }
   }
 
   return (
     <div className="usuario" data-test="user">
-      <img src={imagem} onClick={verificaUrl} data-test="profile-image" />
+      <img alt="imagem-perfil" src={imagem} onClick={verificaUrl} data-test="profile-image" />
       <div className="texto">
         <strong>{props.usuarioPerfil}</strong>
         <span>
