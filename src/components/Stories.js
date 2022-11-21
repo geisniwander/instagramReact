@@ -1,6 +1,6 @@
 import Story from "./Story";
 
-export default (function Stories() {
+export default function Stories() {
   const dados = [
     { imagemPerfil: "assets/img/9gag.svg", nomePerfil: "9gag" },
     { imagemPerfil: "assets/img/meowed.svg", nomePerfil: "meowed" },
@@ -32,4 +32,4 @@ export default (function Stories() {
       </div>
     </div>
   );
-})();
+}

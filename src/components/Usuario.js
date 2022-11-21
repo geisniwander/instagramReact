@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default (function Usuario(props) {
+export default function Usuario(props) {
   const [nome, setNome] = useState(props.nomePerfil);
   const [imagem, setImagem] = useState(props.imagemPerfil);
 
@@ -57,4 +57,4 @@ export default (function Usuario(props) {
       </div>
     </div>
   );
-})();
+}

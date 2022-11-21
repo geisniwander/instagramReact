@@ -1,4 +1,4 @@
-export default(function Story(props) {
+export default function Story(props) {
   return (
     <div className="story">
       <div className="imagem">
@@ -7,4 +7,4 @@ export default(function Story(props) {
       <div className="usuario">{props.nomePerfil}</div>
     </div>
   );
-})();
+}

@@ -2,7 +2,7 @@ import Posts from "./Posts";
 import Sidebar from "./Sidebar";
 import Stories from "./Stories";
 
-export default (function Corpo() {
+export default function Corpo() {
   return (
     <div className="corpo">
       <div className="esquerda">
@@ -12,4 +12,4 @@ export default (function Corpo() {
       <Sidebar />
     </div>
   );
-})();
+}

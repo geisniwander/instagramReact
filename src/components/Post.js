@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default (function Post(props) {
+export default function Post(props) {
   const bookmarkOutline = "bookmark-outline";
   const [salvar, setSalvar] = useState(bookmarkOutline);
   const [curtir, setCurtir] = useState("naoCurtido");
@@ -80,4 +80,4 @@ export default (function Post(props) {
       </div>
     </div>
   );
-})();
+}

@@ -1,4 +1,4 @@
-export default (function Navbar() {
+export default function Navbar() {
   return (
     <div className="navbar">
       <div className="container">
@@ -33,4 +33,4 @@ export default (function Navbar() {
       </div>
     </div>
   );
-})();
+}

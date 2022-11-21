@@ -1,6 +1,6 @@
 import Post from "./Post";
 
-export default (function Posts() {
+export default function Posts() {
   const dados = [
     {
       imagemPerfil: "assets/img/meowed.svg",
@@ -34,4 +34,4 @@ export default (function Posts() {
       ))}
     </div>
   );
-})();
+}
