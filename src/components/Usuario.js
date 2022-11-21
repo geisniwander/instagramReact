@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Usuario(props) {
+export default (function Usuario(props) {
   const [nome, setNome] = useState(props.nomePerfil);
   const [imagem, setImagem] = useState(props.imagemPerfil);
 
@@ -38,7 +38,12 @@ export default function Usuario(props) {
 
   return (
     <div className="usuario" data-test="user">
-      <img alt="imagem-perfil" src={imagem} onClick={verificaUrl} data-test="profile-image" />
+      <img
+        alt="imagem-perfil"
+        src={imagem}
+        onClick={verificaUrl}
+        data-test="profile-image"
+      />
       <div className="texto">
         <strong>{props.usuarioPerfil}</strong>
         <span>
@@ -52,4 +57,4 @@ export default function Usuario(props) {
       </div>
     </div>
   );
-}
+})();

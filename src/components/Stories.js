@@ -1,6 +1,6 @@
 import Story from "./Story";
 
-export default function Stories() {
+export default (function Stories() {
   const dados = [
     { imagemPerfil: "assets/img/9gag.svg", nomePerfil: "9gag" },
     { imagemPerfil: "assets/img/meowed.svg", nomePerfil: "meowed" },
@@ -21,11 +21,15 @@ export default function Stories() {
   return (
     <div className="stories">
       {dados.map((s, index) => (
-        <Story key={index} imagemPerfil={s.imagemPerfil} nomePerfil={s.nomePerfil} />
+        <Story
+          key={index}
+          imagemPerfil={s.imagemPerfil}
+          nomePerfil={s.nomePerfil}
+        />
       ))}
       <div className="setinha">
         <ion-icon name="chevron-forward-circle"></ion-icon>
       </div>
     </div>
   );
-}
+})();

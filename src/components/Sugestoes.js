@@ -1,6 +1,6 @@
 import Sugestao from "./Sugestao";
 
-export default function Sugestoes() {
+export default (function Sugestoes() {
   const dados = [
     {
       imagemPerfil: "assets/img/bad.vibes.memes.svg",
@@ -44,4 +44,4 @@ export default function Sugestoes() {
       ))}
     </div>
   );
-}
+})();

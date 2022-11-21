@@ -1,16 +1,11 @@
 import { useState } from "react";
 
-export default function Post(props) {
+export default (function Post(props) {
   const bookmarkOutline = "bookmark-outline";
   const [salvar, setSalvar] = useState(bookmarkOutline);
   const [curtir, setCurtir] = useState("naoCurtido");
   const [botaoCurtir, setBotaoCurtir] = useState("heart-outline");
   const [qtdCurtir, setQtdCurtir] = useState(props.qtdCurtidas);
-
-  function salvarPost() {
-    if (salvar ===bookmarkOutline){setSalvar("bookmark");}
-    else{setSalvar(bookmarkOutline);}
-  }
 
   function curtirPost(identificador) {
     if (curtir === "naoCurtido") {
@@ -22,7 +17,9 @@ export default function Post(props) {
         setCurtir("naoCurtido");
         setBotaoCurtir("heart-outline");
         setQtdCurtir(qtdCurtir - 1);
-      } else{return;}
+      } else {
+        return;
+      }
     }
   }
 
@@ -39,7 +36,8 @@ export default function Post(props) {
       </div>
 
       <div className="conteudo">
-        <img alt="imagem-post"
+        <img
+          alt="imagem-post"
           src={props.imagemPost}
           onClick={() => curtirPost("img")}
           data-test="post-image"
@@ -61,7 +59,11 @@ export default function Post(props) {
           <div>
             <ion-icon
               name={salvar}
-              onClick={salvarPost}
+              onClick={() =>
+                salvar === bookmarkOutline
+                  ? setSalvar("bookmark")
+                  : setSalvar(bookmarkOutline)
+              }
               data-test="save-post"
             ></ion-icon>
           </div>
@@ -78,4 +80,4 @@ export default function Post(props) {
       </div>
     </div>
   );
-}
+})();
